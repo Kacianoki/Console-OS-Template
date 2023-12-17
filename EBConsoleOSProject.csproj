@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>tobuild\</BaseOutputPath>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EternalBeta.Components" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="OSBase.Console" Version="1.0.1" />
+    <PackageReference Include="OSBase.Info" Version="1.2.0" />
+    <PackageReference Include="OSBase.IO" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Newtonsoft.Json">
+      <Alias>Json</Alias>
+    </Using>
+    <Using Include="OSBase" />
+    <Using Include="OSBase.Console.Console">
+      <Alias>Console</Alias>
+    </Using>
+    <Using Include="OSBase.IO.Directory">
+      <Alias>Directory</Alias>
+    </Using>
+    <Using Include="OSBase.IO.File">
+      <Alias>File</Alias>
+    </Using>
+    <Using Include="OSBase.IO.Rights.DirectoryInfo">
+      <Alias>DirectoryInfo</Alias>
+    </Using>
+    <Using Include="OSBase.IO.Rights.FileInfo">
+      <Alias>FileInfo</Alias>
+    </Using>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call compile.bat" />
+  </Target>
+
+</Project>

@@ -1,0 +1,4 @@
+// If you need to add a file to the OS, write the path to the file here. The path to the file must start in the folder with the compiler!
+// Example of adding files: 
+//[Compiler folder]/cats/catimage.png
+//[Compiler folder]/dogs/dogimage.png
